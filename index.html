@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="container">
+    <section id="aceptado" class="aceptado respuestas hide">
+      <p>Sabía que dirías que sí 🥰</p>
+    </section>
+    <div class="respuestas">
+      <h1>Este es mi plan B ✨
+      </h1>
+      <p>
+        Y quería saber si te gustaría iniciar una relación conmigo. Se sincera con la respuesta.
+      </p>
+      <section class="container__buttons">
+        <div class="primera" id="btn-accept">
+          <button>Si</button>
+        </div>
+        <div class="segunda" id="move-randomly">
+          <button >No</button>
+        </div>
+      </section>
+    </div>
+  </section>
+</body>
+<script>
+    window.onload = (()=>{
+        let btnAccept = document.getElementById('btn-accept');
+        let container = document.getElementById('aceptado');
+        let move = document.querySelector("#move-randomly");
+        btnAccept.addEventListener('click', (e) => {
+          e.preventDefault();
+          container.classList.remove('hide');
+          move.classList.add('hide')
+        })
+        move.addEventListener("click", function(e) {
+            let min = 50;
+            move.style.position = "fixed";
+            move.style.left = (Math.random() * (window.screen.width - min) + min) + "px";
+            move.style.top = (Math.random() * (window.screen.height - min) + min) + "px";
+            
+        });
+    })
+</script>
+</html>
