@@ -1,54 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Nuestra página</title>
   <link rel="stylesheet" href="main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <script
+    src="https://kit.fontawesome.com/bcc14d4623.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="shortcut icon" href="yin-yang.png">
 </head>
 <body>
   <section class="container">
-    <section id="aceptado" class="aceptado respuestas hide">
-      <p>Sabía que dirías que sí 🥰</p>
+    <header>
+      <i class="header__icon fas fa-yin-yang"></i>
+    </header>
+    <section>
+      <main class="container__card">
+        <a class="link__card" href="pages/tasks.html">
+          <section class="card">
+            <i class="card__icon icon__task fas fa-thumbtack"></i>
+            <section class="container__card--text">
+              <h2 class="card__title">Cosas por hacer</h2>
+              <p class="card__subtitle">22 tareas</p>
+            </section>
+          </section>
+        </a>
+        <a class="link__card" href="pages/travel.html">
+          <section class="card">
+            <i class="card__icon icon__travel fas fa-map-marked-alt"></i>
+            <section class="container__card--text">
+              <h2 class="card__title">Viajes</h2>
+              <p class="card__subtitle">22 tareas</p>
+            </section>
+          </section>
+        </a>
+        <a class="link__card" href="pages/movies.html">
+          <section class="card">
+            <i class="card__icon icon__movies fas fa-ticket-alt"></i>
+            <section class="container__card--text">
+              <h2 class="card__title">Películas</h2>
+              <p class="card__subtitle">22 tareas</p>
+            </section>
+          </section>
+        </a>
+        <a class="link__card" href="pages/photos.html">
+          <section class="card">
+            <i class="card__icon icon__photos fas fa-camera"></i>
+            <section class="container__card--text">
+              <h2 class="card__title">Fotos y videos</h2>
+              <p class="card__subtitle">22 elementos</p>
+            </section>
+          </section>
+        </a>
+      </main>
     </section>
-    <div class="respuestas">
-      <h1>Este es mi plan B ✨
-      </h1>
-      <p>
-        Y quería saber si te gustaría iniciar una relación conmigo. Se sincera con la respuesta.
-      </p>
-      <section class="container__buttons">
-        <div class="primera" id="btn-accept">
-          <button>Si</button>
-        </div>
-        <div class="segunda" id="move-randomly">
-          <button >No</button>
-        </div>
-      </section>
-    </div>
+    <footer>
+      Hecho con mucho cariño 💙
+    </footer>
   </section>
 </body>
-<script>
-    window.onload = (()=>{
-        let btnAccept = document.getElementById('btn-accept');
-        let container = document.getElementById('aceptado');
-        let move = document.querySelector("#move-randomly");
-        btnAccept.addEventListener('click', (e) => {
-          e.preventDefault();
-          container.classList.remove('hide');
-          move.classList.add('hide')
-        })
-        move.addEventListener("click", function(e) {
-            let min = 50;
-            move.style.position = "fixed";
-            move.style.left = (Math.random() * (window.screen.width - min) + min) + "px";
-            move.style.top = (Math.random() * (window.screen.height - min) + min) + "px";
-            
-        });
-    })
-</script>
 </html>
